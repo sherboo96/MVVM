@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		911864592700FE0700A27381 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911864572700FE0700A27381 /* HomeVC.swift */; };
+		9118645A2700FE0700A27381 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 911864582700FE0700A27381 /* HomeVC.xib */; };
 		91E7F8882700E54E00328774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E7F8872700E54E00328774 /* AppDelegate.swift */; };
 		91E7F8912700E55400328774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E7F8902700E55400328774 /* Assets.xcassets */; };
 		91E7F8942700E55400328774 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E7F8922700E55400328774 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		911864572700FE0700A27381 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		911864582700FE0700A27381 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		91E7F8842700E54E00328774 /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E7F8872700E54E00328774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91E7F8902700E55400328774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,6 +35,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		911864562700FDDC00A27381 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				911864572700FE0700A27381 /* HomeVC.swift */,
+				911864582700FE0700A27381 /* HomeVC.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		91E7F87B2700E54E00328774 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +132,7 @@
 		91E7F8A22700F93100328774 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				911864562700FDDC00A27381 /* Home */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -189,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91E7F8942700E55400328774 /* LaunchScreen.storyboard in Resources */,
+				9118645A2700FE0700A27381 /* HomeVC.xib in Resources */,
 				91E7F8912700E55400328774 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91E7F8882700E54E00328774 /* AppDelegate.swift in Sources */,
+				911864592700FE0700A27381 /* HomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
