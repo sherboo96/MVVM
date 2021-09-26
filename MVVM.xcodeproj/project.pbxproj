@@ -7,16 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		911864592700FE0700A27381 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911864572700FE0700A27381 /* HomeVC.swift */; };
+		9118645A2700FE0700A27381 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 911864582700FE0700A27381 /* HomeVC.xib */; };
+		917CD3E527010715004C07E4 /* UIViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CD3E427010715004C07E4 /* UIViewEx.swift */; };
+		917CD3E727010A4C004C07E4 /* UICollectionEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CD3E627010A4C004C07E4 /* UICollectionEx.swift */; };
+		917CD3E927010AD9004C07E4 /* UITableViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CD3E827010AD9004C07E4 /* UITableViewEx.swift */; };
+		917CD3ED27010DFF004C07E4 /* SilderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CD3EB27010DFF004C07E4 /* SilderCell.swift */; };
+		917CD3EE27010DFF004C07E4 /* SilderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 917CD3EC27010DFF004C07E4 /* SilderCell.xib */; };
+		917CD3F227011B2F004C07E4 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CD3F127011B2F004C07E4 /* RatingView.swift */; };
 		91E7F8882700E54E00328774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E7F8872700E54E00328774 /* AppDelegate.swift */; };
-		91E7F88C2700E54E00328774 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E7F88B2700E54E00328774 /* ViewController.swift */; };
 		91E7F8912700E55400328774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E7F8902700E55400328774 /* Assets.xcassets */; };
 		91E7F8942700E55400328774 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E7F8922700E55400328774 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		911864572700FE0700A27381 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		911864582700FE0700A27381 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		917CD3E427010715004C07E4 /* UIViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewEx.swift; sourceTree = "<group>"; };
+		917CD3E627010A4C004C07E4 /* UICollectionEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionEx.swift; sourceTree = "<group>"; };
+		917CD3E827010AD9004C07E4 /* UITableViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewEx.swift; sourceTree = "<group>"; };
+		917CD3EB27010DFF004C07E4 /* SilderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilderCell.swift; sourceTree = "<group>"; };
+		917CD3EC27010DFF004C07E4 /* SilderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SilderCell.xib; sourceTree = "<group>"; };
+		917CD3F127011B2F004C07E4 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		91E7F8842700E54E00328774 /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E7F8872700E54E00328774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		91E7F88B2700E54E00328774 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		91E7F8902700E55400328774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91E7F8932700E55400328774 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91E7F8952700E55400328774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +47,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		911864562700FDDC00A27381 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				917CD3EA27010DE2004C07E4 /* CollectionCells */,
+				911864572700FE0700A27381 /* HomeVC.swift */,
+				911864582700FE0700A27381 /* HomeVC.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		917CD3E3270106FD004C07E4 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				917CD3E427010715004C07E4 /* UIViewEx.swift */,
+				917CD3E627010A4C004C07E4 /* UICollectionEx.swift */,
+				917CD3E827010AD9004C07E4 /* UITableViewEx.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		917CD3EA27010DE2004C07E4 /* CollectionCells */ = {
+			isa = PBXGroup;
+			children = (
+				917CD3EB27010DFF004C07E4 /* SilderCell.swift */,
+				917CD3EC27010DFF004C07E4 /* SilderCell.xib */,
+			);
+			path = CollectionCells;
+			sourceTree = "<group>";
+		};
+		917CD3EF27011AF1004C07E4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				917CD3F027011B06004C07E4 /* Rating */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		917CD3F027011B06004C07E4 /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				917CD3F127011B2F004C07E4 /* RatingView.swift */,
+			);
+			path = Rating;
+			sourceTree = "<group>";
+		};
 		91E7F87B2700E54E00328774 = {
 			isa = PBXGroup;
 			children = (
@@ -52,13 +111,87 @@
 		91E7F8862700E54E00328774 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				91E7F8872700E54E00328774 /* AppDelegate.swift */,
-				91E7F88B2700E54E00328774 /* ViewController.swift */,
-				91E7F8902700E55400328774 /* Assets.xcassets */,
-				91E7F8922700E55400328774 /* LaunchScreen.storyboard */,
+				91E7F89B2700F8B800328774 /* Core */,
+				91E7F89E2700F8EA00328774 /* Extensions */,
+				91E7F8A32700F94700328774 /* Model */,
+				91E7F8A22700F93100328774 /* Scenes */,
+				917CD3EF27011AF1004C07E4 /* Utilities */,
+				91E7F8A12700F90B00328774 /* DesignSystem */,
+				91E7F89D2700F8CF00328774 /* Shared */,
+				91E7F8A02700F90000328774 /* Services */,
+				91E7F89F2700F8F400328774 /* Resource */,
+				91E7F89C2700F8C300328774 /* Configuration */,
 				91E7F8952700E55400328774 /* Info.plist */,
 			);
 			path = MVVM;
+			sourceTree = "<group>";
+		};
+		91E7F89B2700F8B800328774 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				91E7F8872700E54E00328774 /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		91E7F89C2700F8C300328774 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				91E7F8922700E55400328774 /* LaunchScreen.storyboard */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		91E7F89D2700F8CF00328774 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		91E7F89E2700F8EA00328774 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				917CD3E3270106FD004C07E4 /* UIView */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		91E7F89F2700F8F400328774 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				91E7F8902700E55400328774 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		91E7F8A02700F90000328774 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		91E7F8A12700F90B00328774 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		91E7F8A22700F93100328774 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				911864562700FDDC00A27381 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		91E7F8A32700F94700328774 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				91E7F8942700E55400328774 /* LaunchScreen.storyboard in Resources */,
+				9118645A2700FE0700A27381 /* HomeVC.xib in Resources */,
+				917CD3EE27010DFF004C07E4 /* SilderCell.xib in Resources */,
 				91E7F8912700E55400328774 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,8 +266,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91E7F88C2700E54E00328774 /* ViewController.swift in Sources */,
 				91E7F8882700E54E00328774 /* AppDelegate.swift in Sources */,
+				917CD3E927010AD9004C07E4 /* UITableViewEx.swift in Sources */,
+				911864592700FE0700A27381 /* HomeVC.swift in Sources */,
+				917CD3E727010A4C004C07E4 /* UICollectionEx.swift in Sources */,
+				917CD3ED27010DFF004C07E4 /* SilderCell.swift in Sources */,
+				917CD3E527010715004C07E4 /* UIViewEx.swift in Sources */,
+				917CD3F227011B2F004C07E4 /* RatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
