@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		911864592700FE0700A27381 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911864572700FE0700A27381 /* HomeVC.swift */; };
 		9118645A2700FE0700A27381 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 911864582700FE0700A27381 /* HomeVC.xib */; };
+		9178322D2702751000C26686 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178322C2702751000C26686 /* HomeViewModel.swift */; };
 		917CD3E527010715004C07E4 /* UIViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CD3E427010715004C07E4 /* UIViewEx.swift */; };
 		917CD3E727010A4C004C07E4 /* UICollectionEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CD3E627010A4C004C07E4 /* UICollectionEx.swift */; };
 		917CD3E927010AD9004C07E4 /* UITableViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CD3E827010AD9004C07E4 /* UITableViewEx.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		911864572700FE0700A27381 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		911864582700FE0700A27381 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		9178322C2702751000C26686 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		917CD3E427010715004C07E4 /* UIViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewEx.swift; sourceTree = "<group>"; };
 		917CD3E627010A4C004C07E4 /* UICollectionEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionEx.swift; sourceTree = "<group>"; };
 		917CD3E827010AD9004C07E4 /* UITableViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewEx.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				917CD3EA27010DE2004C07E4 /* CollectionCells */,
+				9178322C2702751000C26686 /* HomeViewModel.swift */,
 				911864572700FE0700A27381 /* HomeVC.swift */,
 				911864582700FE0700A27381 /* HomeVC.xib */,
 			);
@@ -269,6 +272,7 @@
 				91E7F8882700E54E00328774 /* AppDelegate.swift in Sources */,
 				917CD3E927010AD9004C07E4 /* UITableViewEx.swift in Sources */,
 				911864592700FE0700A27381 /* HomeVC.swift in Sources */,
+				9178322D2702751000C26686 /* HomeViewModel.swift in Sources */,
 				917CD3E727010A4C004C07E4 /* UICollectionEx.swift in Sources */,
 				917CD3ED27010DFF004C07E4 /* SilderCell.swift in Sources */,
 				917CD3E527010715004C07E4 /* UIViewEx.swift in Sources */,

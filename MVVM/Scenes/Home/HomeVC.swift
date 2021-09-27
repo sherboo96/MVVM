@@ -14,9 +14,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var silderCollectionView: UICollectionView!
     
     // MARK: - Variable
-    var arrSilder = [1, 2, 3, 4]
-    var silderTimer: Timer?
-    var currentSilde = 0
+    var homeViewModel = HomeViewModel()
     
     // MARK: -
     init() {
@@ -36,7 +34,8 @@ class HomeVC: UIViewController {
     private func setup() {
         self.setupUI()
         self.setupCollectionView()
-        self.setupSilder()
+        self.homeViewModel.homeViewDidLoad()
+        self.bindData()
     }
     
     private func setupUI() {
@@ -51,23 +50,24 @@ class HomeVC: UIViewController {
         self.silderCollectionView.registerCell(cell: SilderCell.self)
     }
     
-    private func setupSilder() {
-        self.silderTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(scrollToNextSilde), userInfo: nil, repeats: true)
+    func bindData() {
+        self.homeViewModel.scrollToItemAt = { [weak self] indexPath in
+            guard let self = self else { return }
+            self.silderCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
+        
+        self.homeViewModel.itemDidFetch = { [weak self] in
+            guard let self = self else { return }
+            self.silderCollectionView.reloadData()
+        }
     }
     
-    // MARK: - IBAction Function
-    @objc
-    func scrollToNextSilde() {
-        let nextSilde = currentSilde + 1
-        self.currentSilde = nextSilde % self.arrSilder.count
-        let indexPath = IndexPath(item: self.currentSilde, section: 0)
-        self.silderCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-    }
+    
 }
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.arrSilder.count
+        return self.homeViewModel.numberOfSildes
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,7 +77,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Tapped on \(indexPath.row)")
+        self.homeViewModel.didPressOnItem()
     }
 }
 
