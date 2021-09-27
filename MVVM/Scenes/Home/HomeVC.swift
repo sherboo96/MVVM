@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HomeVC: UIViewController {
     
@@ -15,6 +17,7 @@ class HomeVC: UIViewController {
     
     // MARK: - Variable
     var homeViewModel = HomeViewModel()
+    let disposeBag = DisposeBag()
     
     // MARK: -
     init() {
@@ -51,15 +54,14 @@ class HomeVC: UIViewController {
     }
     
     func bindData() {
-        self.homeViewModel.scrollToItemAt = { [weak self] indexPath in
-            guard let self = self else { return }
+        self.homeViewModel.scrollToItemIdx.subscribe { indexPath in
             self.silderCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        }
+        }.disposed(by: disposeBag)
         
-        self.homeViewModel.itemDidFetch = { [weak self] in
-            guard let self = self else { return }
+        self.homeViewModel.arrSilder.subscribe { _ in
             self.silderCollectionView.reloadData()
-        }
+        }.disposed(by: disposeBag)
+
     }
     
     
@@ -77,7 +79,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.homeViewModel.didPressOnItem()
+        homeViewModel.didSelectItem()
     }
 }
 
