@@ -45,7 +45,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1b8-UR-ejU">
                                 <rect key="frame" x="20" y="132" width="355" height="81"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" toolTip="hell" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcG-sU-aQH">
+                                    <button toolTip="hell" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcG-sU-aQH">
                                         <rect key="frame" x="284" y="0.0" width="71" height="81"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,6 +119,7 @@
             <connections>
                 <outlet property="backView" destination="wwo-cg-z5t" id="te9-CB-tMP"/>
                 <outlet property="lblProductName" destination="K2R-fR-5xZ" id="RRM-IX-TCB"/>
+                <outlet property="ratingView" destination="A1j-7k-cKP" id="btb-2W-dEN"/>
                 <outlet property="sellButton" destination="bcG-sU-aQH" id="8zu-wt-dLp"/>
             </connections>
             <point key="canvasLocation" x="57.24637681159421" y="19.084821428571427"/>
