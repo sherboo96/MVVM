@@ -13,6 +13,7 @@ class SilderCell: UICollectionViewCell {
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var lblProductName: UILabel!
     @IBOutlet weak var sellButton: UIButton!
+    @IBOutlet weak var ratingView: RatingView!
     
     // MARK: - Variable
     var sellNow: (()->())?
@@ -45,5 +46,9 @@ extension SilderCell {
     
     func setProductName(name: String) {
         self.lblProductName.text = name
+    }
+    
+    func setupRatingView(rating: Int) {
+        self.ratingView.configureWithRating(rating: rating)
     }
 }

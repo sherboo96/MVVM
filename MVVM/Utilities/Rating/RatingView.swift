@@ -20,7 +20,6 @@ class RatingView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.setupUI()
-        self.configureWithRating(rating: 3)
     }
     
     func setupUI() {
@@ -34,7 +33,17 @@ class RatingView: UIView {
         ])
     }
     
-    func configureWithRating(rating: Int) {
+    func configureWithRating(rating: Int, style: StyleType = .full) {
+        self.stackView.removeAllArrangedSubviews()
+        switch style {
+        case .full:
+            self.fullStar()
+        case .compact:
+            self.oneStar()
+        }
+    }
+    
+    private func fullStar() {
         let filledRating = rating
         if filledRating > 0 {
             for _ in 0..<filledRating {
@@ -48,6 +57,10 @@ class RatingView: UIView {
                 stackView.addArrangedSubview(self.generateStarView(.nonFilled))
             }
         }
+    }
+    
+    private func oneStar() {
+        self.stackView.addArrangedSubview(self.generateStarView(.filled))
     }
     
     func generateStarView(_ type: Startype) -> UIImageView {
@@ -67,5 +80,9 @@ class RatingView: UIView {
     enum Startype {
         case filled
         case nonFilled
+    }
+    
+    enum StyleType {
+        case full, compact
     }
 }
