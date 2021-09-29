@@ -9,3 +9,4 @@ Fashion App
 - App Coordinator.
 - BaseWireFrame.
 - Git Flow.
+- CI/CD by AppCenter
