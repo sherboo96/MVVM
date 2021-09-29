@@ -2,7 +2,10 @@
 
 Fashion App 
 
-- Design Patern: MVVM
-- Design System
-- Custom Views 
-- Git Flow
+- Design Patern: MVVM.
+- Data binding with RxSwift.
+- Design System.
+- Custom Views.
+- App Coordinator.
+- BaseWireFrame.
+- Git Flow.
