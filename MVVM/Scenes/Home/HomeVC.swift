@@ -6,15 +6,19 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HomeVC: UIViewController {
     
     // MARK: - IBOutlet
     @IBOutlet weak var topRoundedView: UIView!
     @IBOutlet weak var silderCollectionView: UICollectionView!
+    @IBOutlet weak var popularTableView: UITableView!
     
     // MARK: - Variable
     var homeViewModel = HomeViewModel()
+    let disposeBag = DisposeBag()
     
     // MARK: -
     init() {
@@ -33,51 +37,51 @@ class HomeVC: UIViewController {
     // MARK: - Helper Function
     private func setup() {
         self.setupUI()
-        self.setupCollectionView()
+        self.registerCells()
         self.homeViewModel.homeViewDidLoad()
+        self.setupSilderCollectionView()
+        self.setupPopularTableView()
         self.bindData()
     }
     
     private func setupUI() {
         let dimensions = self.topRoundedView.frame.height
         self.topRoundedView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: dimensions / 2)
+        self.silderCollectionView.isPagingEnabled = true
     }
     
-    private func setupCollectionView() {
-        self.silderCollectionView.delegate = self
-        self.silderCollectionView.dataSource = self
-        self.silderCollectionView.isPagingEnabled = true
+    private func registerCells() {
         self.silderCollectionView.registerCell(cell: SilderCell.self)
+        self.popularTableView.registerCell(cell: PopularTCell.self)
+    }
+    
+    func setupSilderCollectionView() {
+        self.silderCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
+        self.homeViewModel.arrSilder.asObservable()
+            .bind(to: silderCollectionView.rx.items(cellIdentifier: String(describing: SilderCell.self), cellType: SilderCell.self)) { index, model, cell in
+                cell.setProductName(name: "\(model)")
+                cell.setupRatingView(rating: 5)
+            }.disposed(by: disposeBag)
+    }
+    
+    func setupPopularTableView() {
+        self.popularTableView.rx.setDelegate(self).disposed(by: disposeBag)
+        self.homeViewModel.arrProduct.asObservable()
+            .bind(to: self.popularTableView.rx.items(cellIdentifier: String(describing: PopularTCell.self), cellType: PopularTCell.self)) { index, model, cell in
+                cell.setupItemRating(rating: 1)
+                cell.setupTitle(title: model.name ?? "")
+            }.disposed(by: disposeBag)
     }
     
     func bindData() {
-        self.homeViewModel.scrollToItemAt = { [weak self] indexPath in
-            guard let self = self else { return }
+        self.homeViewModel.scrollToItemIdx.subscribe { indexPath in
             self.silderCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        }
+        }.disposed(by: disposeBag)
         
-        self.homeViewModel.itemDidFetch = { [weak self] in
-            guard let self = self else { return }
+        self.homeViewModel.arrSilder.subscribe { _ in
             self.silderCollectionView.reloadData()
-        }
-    }
-    
-    
-}
-
-extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.homeViewModel.numberOfSildes
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueCell(indexPath: indexPath) as SilderCell
-        cell.setupBackViewColor(UIColor.red)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.homeViewModel.didPressOnItem()
+        }.disposed(by: disposeBag)
+        
     }
 }
 

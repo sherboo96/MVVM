@@ -6,23 +6,25 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class HomeViewModel {
     // MARK: - Variable
-    private var arrSilder = [1] {
-        didSet {
-            itemDidFetch?()
-        }
-    }
+    var arrSilder: BehaviorRelay<[Int]> = .init(value: [1, 2])
+    var arrProduct: BehaviorRelay<[Product]> = .init(value: [
+        .init(name: "Product 1", rating: 1),
+        .init(name: "Product 2", rating: 1),
+        .init(name: "Product 3", rating: 3)
+    ])
     var silderTimer: Timer?
     var currentSilde = 0
     
     // MARK: - Output
-    var scrollToItemAt: ((IndexPath)->())?
-    var itemDidFetch: (()->())?
+    var scrollToItemIdx: PublishSubject<IndexPath> = .init()
     
     var numberOfSildes: Int {
-        return arrSilder.count
+        return arrSilder.value.count
     }
     
     func homeViewDidLoad() {
@@ -33,22 +35,12 @@ class HomeViewModel {
         self.silderTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(scrollToNextSilde), userInfo: nil, repeats: true)
     }
     
-    func fetchData() {
-        self.arrSilder.append(2)
-        self.arrSilder.append(3)
-        self.arrSilder.append(4)
-    }
-    
-    func didPressOnItem() {
-        self.fetchData()
-    }
-    
     // MARK: - Action Function
     @objc
     func scrollToNextSilde() {
         let nextSilde = currentSilde + 1
-        self.currentSilde = nextSilde % self.arrSilder.count
+        self.currentSilde = nextSilde % self.arrSilder.value.count
         let indexPath = IndexPath(item: self.currentSilde, section: 0)
-        self.scrollToItemAt?(indexPath)
+        self.scrollToItemIdx.onNext(indexPath)
     }
 }
