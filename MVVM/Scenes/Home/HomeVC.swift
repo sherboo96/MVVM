@@ -9,26 +9,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeVC: UIViewController {
+class HomeVC: BaseWireFrame<HomeViewModel> {
     
     // MARK: - IBOutlet
     @IBOutlet weak var topRoundedView: UIView!
     @IBOutlet weak var silderCollectionView: UICollectionView!
     @IBOutlet weak var popularTableView: UITableView!
     
-    // MARK: - Variable
-    var homeViewModel = HomeViewModel()
-    let disposeBag = DisposeBag()
-    
     // MARK: -
-    init() {
-        super.init(nibName: "HomeVC", bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
@@ -38,13 +26,13 @@ class HomeVC: UIViewController {
     private func setup() {
         self.setupUI()
         self.registerCells()
-        self.homeViewModel.homeViewDidLoad()
+        self.viewModel.homeViewDidLoad()
         self.setupSilderCollectionView()
         self.setupPopularTableView()
-        self.bindData()
     }
     
     private func setupUI() {
+        coordinator.main.navigate(to: .dummy)
         let dimensions = self.topRoundedView.frame.height
         self.topRoundedView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: dimensions / 2)
         self.silderCollectionView.isPagingEnabled = true
@@ -57,7 +45,7 @@ class HomeVC: UIViewController {
     
     func setupSilderCollectionView() {
         self.silderCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
-        self.homeViewModel.arrSilder.asObservable()
+        self.viewModel.arrSilder.asObservable()
             .bind(to: silderCollectionView.rx.items(cellIdentifier: String(describing: SilderCell.self), cellType: SilderCell.self)) { index, model, cell in
                 cell.setProductName(name: "\(model)")
                 cell.setupRatingView(rating: 5)
@@ -66,22 +54,21 @@ class HomeVC: UIViewController {
     
     func setupPopularTableView() {
         self.popularTableView.rx.setDelegate(self).disposed(by: disposeBag)
-        self.homeViewModel.arrProduct.asObservable()
+        self.viewModel.arrProduct.asObservable()
             .bind(to: self.popularTableView.rx.items(cellIdentifier: String(describing: PopularTCell.self), cellType: PopularTCell.self)) { index, model, cell in
                 cell.setupItemRating(rating: 1)
                 cell.setupTitle(title: model.name ?? "")
             }.disposed(by: disposeBag)
     }
     
-    func bindData() {
-        self.homeViewModel.scrollToItemIdx.subscribe { indexPath in
+    override func bind(viewModel: HomeViewModel) {
+        self.viewModel.scrollToItemIdx.subscribe { indexPath in
             self.silderCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }.disposed(by: disposeBag)
         
-        self.homeViewModel.arrSilder.subscribe { _ in
+        self.viewModel.arrSilder.subscribe { _ in
             self.silderCollectionView.reloadData()
         }.disposed(by: disposeBag)
-        
     }
 }
 

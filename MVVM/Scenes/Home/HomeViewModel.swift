@@ -9,7 +9,16 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class HomeViewModel {
+protocol HomeViewModelOutput {
+    var scrollToItemIdx: PublishSubject<IndexPath> { get set }
+}
+
+protocol HomeViewModelInput {
+    func homeViewDidLoad()
+    func scrollToNextSilde()
+}
+
+class HomeViewModel: HomeViewModelInput, HomeViewModelOutput {
     // MARK: - Variable
     var arrSilder: BehaviorRelay<[Int]> = .init(value: [1, 2])
     var arrProduct: BehaviorRelay<[Product]> = .init(value: [
