@@ -17,6 +17,12 @@
 		917CD3ED27010DFF004C07E4 /* SilderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CD3EB27010DFF004C07E4 /* SilderCell.swift */; };
 		917CD3EE27010DFF004C07E4 /* SilderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 917CD3EC27010DFF004C07E4 /* SilderCell.xib */; };
 		917CD3F227011B2F004C07E4 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917CD3F127011B2F004C07E4 /* RatingView.swift */; };
+		918902272704BF0000F89890 /* PopularTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918902252704BF0000F89890 /* PopularTCell.swift */; };
+		918902282704BF0000F89890 /* PopularTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 918902262704BF0000F89890 /* PopularTCell.xib */; };
+		9189022A2704C49C00F89890 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918902292704C49C00F89890 /* Product.swift */; };
+		9189022C2704CAA500F89890 /* StackViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9189022B2704CAA500F89890 /* StackViewEx.swift */; };
+		9189022F2704D09E00F89890 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9189022E2704D09E00F89890 /* CustomTabBarController.swift */; };
+		918902312704DEF800F89890 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918902302704DEF800F89890 /* CustomTabBar.swift */; };
 		91E7F8882700E54E00328774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E7F8872700E54E00328774 /* AppDelegate.swift */; };
 		91E7F8912700E55400328774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E7F8902700E55400328774 /* Assets.xcassets */; };
 		91E7F8942700E55400328774 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E7F8922700E55400328774 /* LaunchScreen.storyboard */; };
@@ -33,6 +39,12 @@
 		917CD3EB27010DFF004C07E4 /* SilderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilderCell.swift; sourceTree = "<group>"; };
 		917CD3EC27010DFF004C07E4 /* SilderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SilderCell.xib; sourceTree = "<group>"; };
 		917CD3F127011B2F004C07E4 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		918902252704BF0000F89890 /* PopularTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTCell.swift; sourceTree = "<group>"; };
+		918902262704BF0000F89890 /* PopularTCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularTCell.xib; sourceTree = "<group>"; };
+		918902292704C49C00F89890 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		9189022B2704CAA500F89890 /* StackViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewEx.swift; sourceTree = "<group>"; };
+		9189022E2704D09E00F89890 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		918902302704DEF800F89890 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		91E7F8842700E54E00328774 /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E7F8872700E54E00328774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91E7F8902700E55400328774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +72,6 @@
 				E156E651E46B0C862ED217DC /* Pods-MVVM.debug.xcconfig */,
 				FD9FD04D0A1FBD830D154F77 /* Pods-MVVM.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,6 +86,7 @@
 		911864562700FDDC00A27381 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				918902242704BED800F89890 /* TableViewCells */,
 				917CD3EA27010DE2004C07E4 /* CollectionCells */,
 				9178322C2702751000C26686 /* HomeViewModel.swift */,
 				911864572700FE0700A27381 /* HomeVC.swift */,
@@ -89,6 +101,7 @@
 				917CD3E427010715004C07E4 /* UIViewEx.swift */,
 				917CD3E627010A4C004C07E4 /* UICollectionEx.swift */,
 				917CD3E827010AD9004C07E4 /* UITableViewEx.swift */,
+				9189022B2704CAA500F89890 /* StackViewEx.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -105,6 +118,7 @@
 		917CD3EF27011AF1004C07E4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				9189022D2704D07500F89890 /* CustomTabBar */,
 				917CD3F027011B06004C07E4 /* Rating */,
 			);
 			path = Utilities;
@@ -116,6 +130,24 @@
 				917CD3F127011B2F004C07E4 /* RatingView.swift */,
 			);
 			path = Rating;
+			sourceTree = "<group>";
+		};
+		918902242704BED800F89890 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				918902252704BF0000F89890 /* PopularTCell.swift */,
+				918902262704BF0000F89890 /* PopularTCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		9189022D2704D07500F89890 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9189022E2704D09E00F89890 /* CustomTabBarController.swift */,
+				918902302704DEF800F89890 /* CustomTabBar.swift */,
+			);
+			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 		91E7F87B2700E54E00328774 = {
@@ -218,6 +250,7 @@
 		91E7F8A32700F94700328774 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				918902292704C49C00F89890 /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,6 +317,7 @@
 			files = (
 				91E7F8942700E55400328774 /* LaunchScreen.storyboard in Resources */,
 				9118645A2700FE0700A27381 /* HomeVC.xib in Resources */,
+				918902282704BF0000F89890 /* PopularTCell.xib in Resources */,
 				917CD3EE27010DFF004C07E4 /* SilderCell.xib in Resources */,
 				91E7F8912700E55400328774 /* Assets.xcassets in Resources */,
 			);
@@ -340,12 +374,17 @@
 			files = (
 				91E7F8882700E54E00328774 /* AppDelegate.swift in Sources */,
 				917CD3E927010AD9004C07E4 /* UITableViewEx.swift in Sources */,
+				9189022F2704D09E00F89890 /* CustomTabBarController.swift in Sources */,
+				918902312704DEF800F89890 /* CustomTabBar.swift in Sources */,
 				911864592700FE0700A27381 /* HomeVC.swift in Sources */,
 				9178322D2702751000C26686 /* HomeViewModel.swift in Sources */,
 				917CD3E727010A4C004C07E4 /* UICollectionEx.swift in Sources */,
 				917CD3ED27010DFF004C07E4 /* SilderCell.swift in Sources */,
 				917CD3E527010715004C07E4 /* UIViewEx.swift in Sources */,
+				9189022C2704CAA500F89890 /* StackViewEx.swift in Sources */,
+				9189022A2704C49C00F89890 /* Product.swift in Sources */,
 				917CD3F227011B2F004C07E4 /* RatingView.swift in Sources */,
+				918902272704BF0000F89890 /* PopularTCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

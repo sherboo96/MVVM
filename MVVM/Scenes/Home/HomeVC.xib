@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="MVVM" customModuleProvider="target">
             <connections>
+                <outlet property="popularTableView" destination="AA2-Pl-0e9" id="Zpa-ah-Xth"/>
                 <outlet property="silderCollectionView" destination="UzO-Fh-cT3" id="deP-7p-9Ud"/>
                 <outlet property="topRoundedView" destination="Ndu-JQ-K0Q" id="FYn-pr-djf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -35,16 +36,24 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AA2-Pl-0e9">
+                    <rect key="frame" x="0.0" y="433" width="414" height="429"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Ndu-JQ-K0Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6TW-lt-j3v"/>
+                <constraint firstItem="AA2-Pl-0e9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="73Y-ws-3vd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ndu-JQ-K0Q" secondAttribute="trailing" id="CIz-wH-68d"/>
                 <constraint firstItem="Ndu-JQ-K0Q" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="EXu-1y-zJl"/>
                 <constraint firstItem="UzO-Fh-cT3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HWv-kG-Dfx"/>
+                <constraint firstItem="AA2-Pl-0e9" firstAttribute="top" secondItem="UzO-Fh-cT3" secondAttribute="bottom" constant="30" id="KDN-5g-mlk"/>
                 <constraint firstItem="UzO-Fh-cT3" firstAttribute="height" secondItem="Ndu-JQ-K0Q" secondAttribute="height" id="PkH-br-AOc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="AA2-Pl-0e9" secondAttribute="bottom" id="TJT-oP-A6e"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UzO-Fh-cT3" secondAttribute="trailing" id="kn5-4Z-FIo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AA2-Pl-0e9" secondAttribute="trailing" id="leq-aI-B0z"/>
                 <constraint firstItem="UzO-Fh-cT3" firstAttribute="centerY" secondItem="Ndu-JQ-K0Q" secondAttribute="centerY" multiplier="2:1" id="mKm-4f-Jv9"/>
                 <constraint firstItem="Ndu-JQ-K0Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="p76-ab-QaG"/>
             </constraints>
@@ -54,6 +63,9 @@
     <resources>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

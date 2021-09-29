@@ -12,6 +12,11 @@ import RxCocoa
 class HomeViewModel {
     // MARK: - Variable
     var arrSilder: BehaviorRelay<[Int]> = .init(value: [1, 2])
+    var arrProduct: BehaviorRelay<[Product]> = .init(value: [
+        .init(name: "Product 1", rating: 1),
+        .init(name: "Product 2", rating: 1),
+        .init(name: "Product 3", rating: 3)
+    ])
     var silderTimer: Timer?
     var currentSilde = 0
     
@@ -28,10 +33,6 @@ class HomeViewModel {
     
     func setupSilder() {
         self.silderTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(scrollToNextSilde), userInfo: nil, repeats: true)
-    }
-    
-    func didSelectItem() {
-        arrSilder.accept([1, 2, 3,4 ,5])
     }
     
     // MARK: - Action Function
