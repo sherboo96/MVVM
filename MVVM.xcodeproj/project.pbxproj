@@ -23,6 +23,13 @@
 		9189022C2704CAA500F89890 /* StackViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9189022B2704CAA500F89890 /* StackViewEx.swift */; };
 		9189022F2704D09E00F89890 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9189022E2704D09E00F89890 /* CustomTabBarController.swift */; };
 		918902312704DEF800F89890 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918902302704DEF800F89890 /* CustomTabBar.swift */; };
+		918902342704FA2700F89890 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918902332704FA2700F89890 /* AppCoordinator.swift */; };
+		918902362705003B00F89890 /* MianNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918902352705003B00F89890 /* MianNavigator.swift */; };
+		918902392705007000F89890 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918902382705007000F89890 /* Navigator.swift */; };
+		9189023C27050B1500F89890 /* BaseWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9189023B27050B1500F89890 /* BaseWireFrame.swift */; };
+		918902402705225100F89890 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9189023E2705225100F89890 /* MoreVC.swift */; };
+		918902412705225100F89890 /* MoreVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9189023F2705225100F89890 /* MoreVC.xib */; };
+		91890243270523A500F89890 /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91890242270523A500F89890 /* MoreViewModel.swift */; };
 		91E7F8882700E54E00328774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E7F8872700E54E00328774 /* AppDelegate.swift */; };
 		91E7F8912700E55400328774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E7F8902700E55400328774 /* Assets.xcassets */; };
 		91E7F8942700E55400328774 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E7F8922700E55400328774 /* LaunchScreen.storyboard */; };
@@ -45,6 +52,13 @@
 		9189022B2704CAA500F89890 /* StackViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewEx.swift; sourceTree = "<group>"; };
 		9189022E2704D09E00F89890 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		918902302704DEF800F89890 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		918902332704FA2700F89890 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		918902352705003B00F89890 /* MianNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MianNavigator.swift; sourceTree = "<group>"; };
+		918902382705007000F89890 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		9189023B27050B1500F89890 /* BaseWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWireFrame.swift; sourceTree = "<group>"; };
+		9189023E2705225100F89890 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
+		9189023F2705225100F89890 /* MoreVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreVC.xib; sourceTree = "<group>"; };
+		91890242270523A500F89890 /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
 		91E7F8842700E54E00328774 /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E7F8872700E54E00328774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91E7F8902700E55400328774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,6 +132,7 @@
 		917CD3EF27011AF1004C07E4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				918902322704FA1000F89890 /* Coordinator */,
 				9189022D2704D07500F89890 /* CustomTabBar */,
 				917CD3F027011B06004C07E4 /* Rating */,
 			);
@@ -148,6 +163,42 @@
 				918902302704DEF800F89890 /* CustomTabBar.swift */,
 			);
 			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		918902322704FA1000F89890 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				918902372705005E00F89890 /* Protocals */,
+				9189023A2705017200F89890 /* Navigators */,
+				918902332704FA2700F89890 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		918902372705005E00F89890 /* Protocals */ = {
+			isa = PBXGroup;
+			children = (
+				918902382705007000F89890 /* Navigator.swift */,
+			);
+			path = Protocals;
+			sourceTree = "<group>";
+		};
+		9189023A2705017200F89890 /* Navigators */ = {
+			isa = PBXGroup;
+			children = (
+				918902352705003B00F89890 /* MianNavigator.swift */,
+			);
+			path = Navigators;
+			sourceTree = "<group>";
+		};
+		9189023D2705223C00F89890 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				91890242270523A500F89890 /* MoreViewModel.swift */,
+				9189023E2705225100F89890 /* MoreVC.swift */,
+				9189023F2705225100F89890 /* MoreVC.xib */,
+			);
+			path = More;
 			sourceTree = "<group>";
 		};
 		91E7F87B2700E54E00328774 = {
@@ -190,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				91E7F8872700E54E00328774 /* AppDelegate.swift */,
+				9189023B27050B1500F89890 /* BaseWireFrame.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -243,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				911864562700FDDC00A27381 /* Home */,
+				9189023D2705223C00F89890 /* More */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -316,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91E7F8942700E55400328774 /* LaunchScreen.storyboard in Resources */,
+				918902412705225100F89890 /* MoreVC.xib in Resources */,
 				9118645A2700FE0700A27381 /* HomeVC.xib in Resources */,
 				918902282704BF0000F89890 /* PopularTCell.xib in Resources */,
 				917CD3EE27010DFF004C07E4 /* SilderCell.xib in Resources */,
@@ -377,14 +431,20 @@
 				9189022F2704D09E00F89890 /* CustomTabBarController.swift in Sources */,
 				918902312704DEF800F89890 /* CustomTabBar.swift in Sources */,
 				911864592700FE0700A27381 /* HomeVC.swift in Sources */,
+				918902392705007000F89890 /* Navigator.swift in Sources */,
+				9189023C27050B1500F89890 /* BaseWireFrame.swift in Sources */,
 				9178322D2702751000C26686 /* HomeViewModel.swift in Sources */,
+				918902342704FA2700F89890 /* AppCoordinator.swift in Sources */,
 				917CD3E727010A4C004C07E4 /* UICollectionEx.swift in Sources */,
 				917CD3ED27010DFF004C07E4 /* SilderCell.swift in Sources */,
 				917CD3E527010715004C07E4 /* UIViewEx.swift in Sources */,
 				9189022C2704CAA500F89890 /* StackViewEx.swift in Sources */,
+				918902402705225100F89890 /* MoreVC.swift in Sources */,
+				918902362705003B00F89890 /* MianNavigator.swift in Sources */,
 				9189022A2704C49C00F89890 /* Product.swift in Sources */,
 				917CD3F227011B2F004C07E4 /* RatingView.swift in Sources */,
 				918902272704BF0000F89890 /* PopularTCell.swift in Sources */,
+				91890243270523A500F89890 /* MoreViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

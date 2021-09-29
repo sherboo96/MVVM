@@ -11,12 +11,21 @@ class CustomTabBarController: UITabBarController {
     
     lazy var middleButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .red
+        button.backgroundColor = .lightGray
         button.setImage(UIImage(named: "More"), for: .normal)
-        button.setTitleColor(.green, for: .selected)
-        button.setTitleColor(.gray, for: .normal)
         return button
     }()
+    
+    var appCoordinator: Coodinator
+    
+    init(appCoordinator: Coodinator) {
+        self.appCoordinator = appCoordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +40,11 @@ class CustomTabBarController: UITabBarController {
     }
     
     private func setupTabBarItems() {
-        self.viewControllers = TabBarItems.allCases.map({viewControllerForTabItem($0)})
+        self.viewControllers = TabBarItems.allCases.map({
+            let VC = viewControllerForTabItem($0)
+            let navigateController = UINavigationController(rootViewController: VC)
+            return navigateController
+        })
     }
     
     func setupUI() {
@@ -56,14 +69,14 @@ class CustomTabBarController: UITabBarController {
     func viewControllerForTabItem(_ item: TabBarItems) -> UIViewController {
         switch item {
         case .Home:
-            let VC = HomeVC()
+            let VC = appCoordinator.main.viewController(for: .home)
             VC.tabBarItem = tabBarItem(item)
             return VC
         case .Middle:
-            let VC = HomeVC()
+            let VC = UIViewController()
             return VC
         case .Menu:
-            let VC = HomeVC()
+            let VC = appCoordinator.main.viewController(for: .more)
             VC.tabBarItem = tabBarItem(item)
             return VC
         }
