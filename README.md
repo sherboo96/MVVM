@@ -11,3 +11,4 @@ Fashion App
 - Git Flow.
 - CI/CD by AppCenter.
 - Router Layer.
+- Dependency Injection
