@@ -12,7 +12,6 @@ class MianNavigator: Navigator {
     
     var coodinator: Coodinator
     
-    
     enum Destination {
         case home
         case more
@@ -26,12 +25,14 @@ class MianNavigator: Navigator {
     func viewController(for destination: Destination) -> UIViewController {
         switch destination {
         case .home:
+            let homeRouter: HomeVCRouterProtocol = HomeVCRouter(coordinator: coodinator)
             let homeViewModel = HomeViewModel()
-            let VC = HomeVC(viewModel: homeViewModel, coordinator: coodinator)
+            let VC = HomeVC(viewModel: homeViewModel, router: homeRouter)
             return VC
         case .more:
+            let moreRouter: MoreVCRouterProtocol = MoreVCRouter(coordinator: coodinator)
             let moreViewModel = MoreViewModel()
-            let VC = MoreVC(viewModel: moreViewModel, coordinator: coodinator)
+            let VC = MoreVC(viewModel: moreViewModel, router: moreRouter)
             return VC
         case .dummy:
             let view = UIViewController()
