@@ -13,7 +13,6 @@ protocol HomeVCRouterProtocol {
 }
 
 class HomeVCRouter: HomeVCRouterProtocol {
-    
     var coordinator: Coodinator
     
     init(coordinator: Coodinator) {
