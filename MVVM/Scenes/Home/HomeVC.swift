@@ -9,15 +9,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeVC: BaseWireFrame<HomeViewModel, HomeVCRouterProtocol> {
+class HomeVC: BaseWireFrame<HomeViewModel> {
     
     // MARK: - IBOutlet
     @IBOutlet weak var topRoundedView: UIView!
     @IBOutlet weak var silderCollectionView: UICollectionView!
     @IBOutlet weak var popularTableView: UITableView!
-    
-    
-    // MARK: - Variabl
     
     // MARK: -
     override func viewDidLoad() {
@@ -35,7 +32,7 @@ class HomeVC: BaseWireFrame<HomeViewModel, HomeVCRouterProtocol> {
     }
     
     private func setupUI() {
-        router.presentEmptyScreen()
+        coordinator.main.navigate(to: .dummy)
         let dimensions = self.topRoundedView.frame.height
         self.topRoundedView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: dimensions / 2)
         self.silderCollectionView.isPagingEnabled = true

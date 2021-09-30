@@ -9,16 +9,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class BaseWireFrame<ViewModel, ViewRouter>: UIViewController {
+class BaseWireFrame<ViewModel>: UIViewController {
     let viewModel: ViewModel!
-    var router: ViewRouter
+    var coordinator: Coodinator
     lazy var disposeBag: DisposeBag = {
         return DisposeBag()
     }()
     
-    init(viewModel: ViewModel, router: ViewRouter) {
+    init(viewModel: ViewModel, coordinator: Coodinator) {
         self.viewModel = viewModel
-        self.router = router
+        self.coordinator = coordinator
         super.init(nibName: String(describing: type(of: self)), bundle: nil)
     }
     
