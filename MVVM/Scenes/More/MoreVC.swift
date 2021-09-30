@@ -7,11 +7,11 @@
 
 import UIKit
 
-class MoreVC: BaseWireFrame<MoreViewModel> {
+class MoreVC: BaseWireFrame<MoreViewModel, MoreVCRouterProtocol> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        coordinator.main.navigate(to: .home)
+        router.presentEmptyScreen()
     }
 
 
