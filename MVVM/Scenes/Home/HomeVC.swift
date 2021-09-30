@@ -35,7 +35,6 @@ class HomeVC: BaseWireFrame<HomeViewModel, HomeVCRouterProtocol> {
     }
     
     private func setupUI() {
-        router.presentEmptyScreen()
         let dimensions = self.topRoundedView.frame.height
         self.topRoundedView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: dimensions / 2)
         self.silderCollectionView.isPagingEnabled = true
@@ -60,8 +59,11 @@ class HomeVC: BaseWireFrame<HomeViewModel, HomeVCRouterProtocol> {
         self.viewModel.arrProduct.asObservable()
             .bind(to: self.popularTableView.rx.items(cellIdentifier: String(describing: PopularTCell.self), cellType: PopularTCell.self)) { index, model, cell in
                 cell.setupItemRating(rating: 1)
-                cell.setupTitle(title: model.name ?? "")
+                cell.setupTitle(title: model.name)
             }.disposed(by: disposeBag)
+        self.popularTableView.rx.itemSelected.subscribe { indexPath in
+            self.viewModel.didSelectItemAtIndexPath(indexPath)
+        }.disposed(by: disposeBag)
     }
     
     override func bind(viewModel: HomeViewModel) {
@@ -71,6 +73,10 @@ class HomeVC: BaseWireFrame<HomeViewModel, HomeVCRouterProtocol> {
         
         self.viewModel.arrSilder.subscribe { _ in
             self.silderCollectionView.reloadData()
+        }.disposed(by: disposeBag)
+        
+        self.viewModel.productItemSelected.subscribe { (product) in
+            self.router.navigateToProductDetail(product)
         }.disposed(by: disposeBag)
     }
 }

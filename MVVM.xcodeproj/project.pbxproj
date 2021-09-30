@@ -30,6 +30,11 @@
 		918902402705225100F89890 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9189023E2705225100F89890 /* MoreVC.swift */; };
 		918902412705225100F89890 /* MoreVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9189023F2705225100F89890 /* MoreVC.xib */; };
 		91890243270523A500F89890 /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91890242270523A500F89890 /* MoreViewModel.swift */; };
+		91A5A08F27064DE3005DF063 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A5A08D27064DE3005DF063 /* ProductDetailsVC.swift */; };
+		91A5A09027064DE3005DF063 /* ProductDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A5A08E27064DE3005DF063 /* ProductDetailsVC.xib */; };
+		91A5A09227064DFE005DF063 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A5A09127064DFE005DF063 /* ProductDetailsViewModel.swift */; };
+		91A5A09427064E0E005DF063 /* ProductDetailsVCRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A5A09327064E0E005DF063 /* ProductDetailsVCRouter.swift */; };
+		91A5A09727065BCC005DF063 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A5A09627065BCC005DF063 /* ProductViewModel.swift */; };
 		91AE877A2706312000CA920F /* HomeVCRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AE87792706312000CA920F /* HomeVCRouter.swift */; };
 		91AE877C2706334800CA920F /* MoreVCRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AE877B2706334800CA920F /* MoreVCRouter.swift */; };
 		91E7F8882700E54E00328774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E7F8872700E54E00328774 /* AppDelegate.swift */; };
@@ -61,6 +66,11 @@
 		9189023E2705225100F89890 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		9189023F2705225100F89890 /* MoreVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreVC.xib; sourceTree = "<group>"; };
 		91890242270523A500F89890 /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
+		91A5A08D27064DE3005DF063 /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
+		91A5A08E27064DE3005DF063 /* ProductDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsVC.xib; sourceTree = "<group>"; };
+		91A5A09127064DFE005DF063 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
+		91A5A09327064E0E005DF063 /* ProductDetailsVCRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVCRouter.swift; sourceTree = "<group>"; };
+		91A5A09627065BCC005DF063 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		91AE87792706312000CA920F /* HomeVCRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCRouter.swift; sourceTree = "<group>"; };
 		91AE877B2706334800CA920F /* MoreVCRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVCRouter.swift; sourceTree = "<group>"; };
 		91E7F8842700E54E00328774 /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +217,26 @@
 			path = More;
 			sourceTree = "<group>";
 		};
+		91A5A08C27064DC2005DF063 /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				91A5A09527065BA8005DF063 /* ViewModel */,
+				91A5A09127064DFE005DF063 /* ProductDetailsViewModel.swift */,
+				91A5A09327064E0E005DF063 /* ProductDetailsVCRouter.swift */,
+				91A5A08D27064DE3005DF063 /* ProductDetailsVC.swift */,
+				91A5A08E27064DE3005DF063 /* ProductDetailsVC.xib */,
+			);
+			path = ProductDetails;
+			sourceTree = "<group>";
+		};
+		91A5A09527065BA8005DF063 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				91A5A09627065BCC005DF063 /* ProductViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		91E7F87B2700E54E00328774 = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				911864562700FDDC00A27381 /* Home */,
+				91A5A08C27064DC2005DF063 /* ProductDetails */,
 				9189023D2705223C00F89890 /* More */,
 			);
 			path = Scenes;
@@ -378,6 +409,7 @@
 				918902412705225100F89890 /* MoreVC.xib in Resources */,
 				9118645A2700FE0700A27381 /* HomeVC.xib in Resources */,
 				918902282704BF0000F89890 /* PopularTCell.xib in Resources */,
+				91A5A09027064DE3005DF063 /* ProductDetailsVC.xib in Resources */,
 				917CD3EE27010DFF004C07E4 /* SilderCell.xib in Resources */,
 				91E7F8912700E55400328774 /* Assets.xcassets in Resources */,
 			);
@@ -434,6 +466,7 @@
 			files = (
 				91E7F8882700E54E00328774 /* AppDelegate.swift in Sources */,
 				917CD3E927010AD9004C07E4 /* UITableViewEx.swift in Sources */,
+				91A5A09227064DFE005DF063 /* ProductDetailsViewModel.swift in Sources */,
 				9189022F2704D09E00F89890 /* CustomTabBarController.swift in Sources */,
 				918902312704DEF800F89890 /* CustomTabBar.swift in Sources */,
 				911864592700FE0700A27381 /* HomeVC.swift in Sources */,
@@ -447,12 +480,15 @@
 				917CD3E527010715004C07E4 /* UIViewEx.swift in Sources */,
 				9189022C2704CAA500F89890 /* StackViewEx.swift in Sources */,
 				918902402705225100F89890 /* MoreVC.swift in Sources */,
+				91A5A09427064E0E005DF063 /* ProductDetailsVCRouter.swift in Sources */,
 				918902362705003B00F89890 /* MianNavigator.swift in Sources */,
 				9189022A2704C49C00F89890 /* Product.swift in Sources */,
 				917CD3F227011B2F004C07E4 /* RatingView.swift in Sources */,
 				918902272704BF0000F89890 /* PopularTCell.swift in Sources */,
+				91A5A08F27064DE3005DF063 /* ProductDetailsVC.swift in Sources */,
 				91890243270523A500F89890 /* MoreViewModel.swift in Sources */,
 				91AE877C2706334800CA920F /* MoreVCRouter.swift in Sources */,
+				91A5A09727065BCC005DF063 /* ProductViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

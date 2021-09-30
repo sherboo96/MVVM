@@ -14,8 +14,8 @@ class MianNavigator: Navigator {
     
     enum Destination {
         case home
+        case details(product: Product)
         case more
-        case dummy
     }
     
     required init(coordinator: Coodinator) {
@@ -29,15 +29,16 @@ class MianNavigator: Navigator {
             let homeViewModel = HomeViewModel()
             let VC = HomeVC(viewModel: homeViewModel, router: homeRouter)
             return VC
+        case .details(let product):
+            let productDetailsRouter: ProductDetailsVCRouterProtocol = ProductDetailsVCRouter(coordinator: coodinator)
+            let productDetailsViewModel = ProductDetailsViewModel(prodcut: product)
+            let VC = ProductDetailsVC(viewModel: productDetailsViewModel, router: productDetailsRouter)
+            return VC
         case .more:
             let moreRouter: MoreVCRouterProtocol = MoreVCRouter(coordinator: coodinator)
             let moreViewModel = MoreViewModel()
             let VC = MoreVC(viewModel: moreViewModel, router: moreRouter)
             return VC
-        case .dummy:
-            let view = UIViewController()
-            view.view.backgroundColor = .yellow
-            return view
         }
     }
     

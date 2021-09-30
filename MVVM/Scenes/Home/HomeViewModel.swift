@@ -11,14 +11,16 @@ import RxCocoa
 
 protocol HomeViewModelOutput {
     var scrollToItemIdx: PublishSubject<IndexPath> { get set }
+    var productItemSelected: PublishSubject<Product> { get set }
 }
 
 protocol HomeViewModelInput {
     func homeViewDidLoad()
     func scrollToNextSilde()
+    func didSelectItemAtIndexPath(_ indexPath: IndexPath)
 }
 
-class HomeViewModel: HomeViewModelInput, HomeViewModelOutput {
+class HomeViewModel: HomeViewModelInput, HomeViewModelOutput, ViewModelProtocal {
     // MARK: - Variable
     var arrSilder: BehaviorRelay<[Int]> = .init(value: [1, 2])
     var arrProduct: BehaviorRelay<[Product]> = .init(value: [
@@ -31,6 +33,7 @@ class HomeViewModel: HomeViewModelInput, HomeViewModelOutput {
     
     // MARK: - Output
     var scrollToItemIdx: PublishSubject<IndexPath> = .init()
+    var productItemSelected: PublishSubject<Product> = .init()
     
     var numberOfSildes: Int {
         return arrSilder.value.count
@@ -42,6 +45,11 @@ class HomeViewModel: HomeViewModelInput, HomeViewModelOutput {
     
     func setupSilder() {
         self.silderTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(scrollToNextSilde), userInfo: nil, repeats: true)
+    }
+    
+    func didSelectItemAtIndexPath(_ indexPath: IndexPath) {
+        let product = arrProduct.value[indexPath.row]
+        self.productItemSelected.onNext(product)
     }
     
     // MARK: - Action Function

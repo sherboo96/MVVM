@@ -9,7 +9,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class BaseWireFrame<ViewModel, ViewRouter>: UIViewController {
+protocol ViewModelProtocal {
+    
+}
+
+class BaseWireFrame<ViewModel: ViewModelProtocal, ViewRouter>: UIViewController {
     let viewModel: ViewModel!
     var router: ViewRouter
     lazy var disposeBag: DisposeBag = {
