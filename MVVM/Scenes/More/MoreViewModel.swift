@@ -7,6 +7,6 @@
 
 import Foundation
 
-class MoreViewModel {
+class MoreViewModel: ViewModelProtocal {
     
 }

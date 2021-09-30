@@ -8,6 +8,6 @@
 import Foundation
 
 struct Product {
-    var name: String?
-    var rating: Int?
+    var name: String
+    var rating: Int
 }

@@ -1,5 +1,5 @@
 //
-//  MoreVCRouter.swift
+//  ProductDetailsVCRouter.swift
 //  MVVM
 //
 //  Created by Mahmoud Sherbeny on 30/09/2021.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol MoreVCRouterProtocol {
+protocol ProductDetailsVCRouterProtocol {
     var coordinator: Coodinator { get set}
-    func presentHomeVC()
+    func presentEmptyScreen()
 }
 
-class MoreVCRouter: MoreVCRouterProtocol {
+class ProductDetailsVCRouter: ProductDetailsVCRouterProtocol {
     
     var coordinator: Coodinator
     
@@ -20,7 +20,7 @@ class MoreVCRouter: MoreVCRouterProtocol {
         self.coordinator = coordinator
     }
     
-    func presentHomeVC() {
-        coordinator.main.navigate(to: .home, with: .push)
+    func presentEmptyScreen() {
+        print("")
     }
 }
