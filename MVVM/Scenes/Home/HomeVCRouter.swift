@@ -10,6 +10,7 @@ import Foundation
 protocol HomeVCRouterProtocol {
     var coordinator: Coodinator { get set}
     func presentEmptyScreen()
+    func navigateToProductDetail(_ product: Product)
 }
 
 class HomeVCRouter: HomeVCRouterProtocol {
@@ -21,6 +22,10 @@ class HomeVCRouter: HomeVCRouterProtocol {
     }
     
     func presentEmptyScreen() {
-        self.coordinator.main.navigate(to: .dummy, with: .present)
+        self.coordinator.main.navigate(to: .more, with: .present)
+    }
+    
+    func navigateToProductDetail(_ product: Product) {
+        self.coordinator.main.navigate(to: .details(product: product), with: .push)
     }
 }

@@ -11,7 +11,6 @@ class MoreVC: BaseWireFrame<MoreViewModel, MoreVCRouterProtocol> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        router.presentEmptyScreen()
     }
 
 
