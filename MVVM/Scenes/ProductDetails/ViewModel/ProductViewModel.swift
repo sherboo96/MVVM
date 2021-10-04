@@ -10,8 +10,10 @@ import Foundation
 class ProductViewModel {
     
     let mainTitle: String
+    let rating: Int
     
     init(_ product: Product) {
         self.mainTitle = "Product Title: \(product.name)"
+        self.rating = product.rating
     }
 }
