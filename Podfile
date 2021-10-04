@@ -7,5 +7,6 @@ target 'MVVM' do
   # Pods for MVVM
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SinchRTC', '4.1.0'
 
 end
